@@ -1,0 +1,35 @@
+{
+  "name": "aws-asg-list",
+  "version": "0.0.1",
+  "description": "List the IP's of Amazon AWS Autoscaling instances",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grrr-amsterdam/aws-asg-list.git"
+  },
+  "keywords": [
+    "devops",
+    "12factor",
+    "administration",
+    "remote",
+    "autoscaling",
+    "amazon"
+  ],
+  "author": "David Spreekmeester <david@grrr.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grrr-amsterdam/aws-asg-list/issues"
+  },
+  "preferGlobal": true,
+  "homepage": "https://github.com/grrr-amsterdam/aws-asg-list#readme",
+  "bin": {
+    "aws-asg-list": "./index.js"
+  },
+  "dependencies": {
+    "12g-dynamic-env-vars": "^1.0.1",
+    "util": "^0.10.3"
+  }
+}

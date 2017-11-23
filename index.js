@@ -35,7 +35,7 @@ function setCreds(configVars) {
 }
 
 async function descInstances(configVars) {
-    var cmd = 'aws ec2 describe-instances '
+    const cmd = 'aws ec2 describe-instances '
         + '--region ' + configVars.AUTOSCALE_REGION + ' ' 
         + '--query \'Reservations[*].Instances[*].{x:InstanceId,y:PublicIpAddress}\' '
         + '--output text'
@@ -44,17 +44,17 @@ async function descInstances(configVars) {
 }
 
 async function descAutoScalingGroups(configVars) {
-    var cmd = 'aws autoscaling describe-auto-scaling-groups '
+    const cmd = 'aws autoscaling describe-auto-scaling-groups '
         + '--auto-scaling-group-name ' + configVars.AUTOSCALE_APP + ' '
         + '--region ' + configVars.AUTOSCALE_REGION + ' '
         + '--query \'AutoScalingGroups[*].Instances\' '
-        + '--output text |grep Healthy |grep InService | awk {\'print $3\'}|sort -V'
+        + '--output text |grep Healthy |grep InService | awk {\'print $3\'}'
     const { stdout, stderr } = await exec(cmd)
     return stdout
 }
 
 function filterInstances(allInstancesLines, autoScalingGroupsLines) {
-    var allInstances = allInstancesLines.split("\n")
+    const allInstances = allInstancesLines.split("\n")
     var autoScalingGroups = autoScalingGroupsLines.split("\n")
     var filteredInstances = []
 

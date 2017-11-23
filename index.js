@@ -4,7 +4,8 @@
  */
 const config    = require('12g-dynamic-env-vars')
 const util      = require('util')
-const exec      = util.promisify(require('child_process').exec);
+const exec      = util.promisify(require('child_process').exec)
+const ipsort    = require('ipsort')
 
 var configKeys = [
     'AUTOSCALE_APP',
@@ -23,7 +24,7 @@ async function run () {
         const allInstances = await descInstances(configVars)
         const filteredInstances = filterInstances(allInstances, autoScalingGroups)
 
-        console.log(filteredInstances.join("\n"))
+        console.log(ipsort(filteredInstances).join("\n"))
     } catch (err) {
         console.error(err)
     }

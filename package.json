@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "12g-dynamic-env-vars": "^1.0.1",
+    "ipsort": "^0.0.1",
     "util": "^0.10.3"
   }
 }

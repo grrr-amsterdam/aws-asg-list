@@ -1,6 +1,6 @@
 {
   "name": "aws-asg-list",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "List the IP's of Amazon AWS Autoscaling instances",
   "main": "index.js",
   "scripts": {
